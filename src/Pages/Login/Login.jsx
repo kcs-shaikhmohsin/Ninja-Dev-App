@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 import "./Login.css";
 import { useNavigate, Link } from "react-router-dom";
+import Navbar from "../../Components/Navbar/Navbar";
+
+
 
 const Login = () => {
   const [inpval, setInpVal] = useState({
@@ -46,25 +49,28 @@ const Login = () => {
         } else {
           console.log("User successfuly login");
           // localStorage.setItem("logged_user", JSON.stringify(getUserArr))
-          // history("/details");
+          history("/home");
         }
       }
     }
   };
 
   const history = useNavigate();
+
   const goToSignup = (e) => {
     e.preventDefault();
     history("/sigup");
   };
 
   return (
+    <>
+    <Navbar />
     <div className="login">
       <div className="loginWrapper">
         <div className="loginLeft">
           <h3 className="loginLogo">Ninja-Dev-App</h3>
           <span className="loginDesc">
-            Enjoy with lots of features using the Ninja-Dev-App.
+            Enjoy the lots of features using the Ninja-Dev-App.
           </span>
         </div>
         <div className="loginRight">
@@ -94,6 +100,7 @@ const Login = () => {
         </div>
       </div>
     </div>
+    </>
   );
 };
 

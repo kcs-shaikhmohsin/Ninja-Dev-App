@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./RegisterUser.css";
 import { useNavigate } from "react-router-dom";
+import Navbar from "../../Components/Navbar/Navbar";
 
 const RegisterUser = () => {
   const history = useNavigate();
@@ -46,12 +47,14 @@ const RegisterUser = () => {
   };
 
   return (
+    <>
+    <Navbar />
     <div className="login">
       <div className="loginWrapper">
         <div className="loginLeft">
           <h3 className="loginLogo">Ninja-Dev-App</h3>
           <span className="loginDesc">
-          Enjoy with lots of features using the Ninja-Dev-App.
+          Enjoy the lots of features using the Ninja-Dev-App.
           </span>
         </div>
         <div className="loginRight">
@@ -84,6 +87,7 @@ const RegisterUser = () => {
         </div>
       </div>
     </div>
+    </>
   );
 };
 
